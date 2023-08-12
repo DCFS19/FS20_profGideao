@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
+<body>
+    <!--
+        Formulário
+        - action
+        - method
+    -->
+    <form action="" method="post">
+        <!--
+            input
+            - type
+            - name
+        -->
+        <input type="file" name="doc">
+        <input type="text" name="name" placeholder="Nome do Usuário" required>
+        <input type="password" name="password" placeholder="Senha">
+        <input type="number" name="number" placeholder="Preço do Produto" min="10" max="40">
+        <input type="email" name="email" placeholder="Email  do usuário">
+        <input type="checkbox" name="promocao">
+        <input type="radio" name="aceitar-termo">
+        <input type="date">
+        <input type="datetime-local">
+        <input type="datetime">
+        <input type="time">
+        <select name="estados" multiple>
+            { estados: 'Terra do Sol' }
+            <option value="Terra do Sol">Ceará</option>
+            <option disabled value="Um passo pro inferno">Piauí</option>
+            <option value="Maranhão">Maranhão</option>
+        </select>
+        <select name="produtos">
+            <optgroup label="Infantil">
+                <option value="Calçados">Calçados</option>
+            </optgroup>
+            <optgroup label="Adulto">
+                <option value="Calçados">Calçados</option>
+            </optgroup>
+        </select>
+        <textarea name="descricao" rows="10"></textarea>
+        <input list="preselecao">
+        <datalist id="preselecao">
+            <option value="Chocolate">Chocolate</option>
+            <option value="Sorvete">Sorvete</option>
+            <option value="Pipoca">Pipoca</option>
+            <option value="Picolé">Picolé</option>
+        </datalist>
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>

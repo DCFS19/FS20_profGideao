@@ -2,57 +2,71 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/css/bootstrap.min.css" integrity="sha512-Ez0cGzNzHR1tYAv56860NLspgUGuQw16GiOOp/I2LuTmpSK9xDXlgJz3XN4cnpXWDmkNBKXR/VDMTCnAaEooxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="styles.css">
     <title>Form</title>
 </head>
 <body>
-    <!--
-        Formulário
-        - action
-        - method
-    -->
-    <form action="" method="post">
-        <!--
-            input
-            - type
-            - name
-        -->
-        <input type="file" name="doc">
-        <input type="text" name="name" placeholder="Nome do Usuário" required>
-        <input type="password" name="password" placeholder="Senha">
-        <input type="number" name="number" placeholder="Preço do Produto" min="10" max="40">
-        <input type="email" name="email" placeholder="Email  do usuário">
-        <input type="checkbox" name="promocao">
-        <input type="radio" name="aceitar-termo">
-        <input type="date">
-        <input type="datetime-local">
-        <input type="datetime">
-        <input type="time">
-        <select name="estados" multiple>
-            { estados: 'Terra do Sol' }
-            <option value="Terra do Sol">Ceará</option>
-            <option disabled value="Um passo pro inferno">Piauí</option>
-            <option value="Maranhão">Maranhão</option>
-        </select>
-        <select name="produtos">
-            <optgroup label="Infantil">
-                <option value="Calçados">Calçados</option>
-            </optgroup>
-            <optgroup label="Adulto">
-                <option value="Calçados">Calçados</option>
-            </optgroup>
-        </select>
-        <textarea name="descricao" rows="10"></textarea>
-        <input list="preselecao">
-        <datalist id="preselecao">
-            <option value="Chocolate">Chocolate</option>
-            <option value="Sorvete">Sorvete</option>
-            <option value="Pipoca">Pipoca</option>
-            <option value="Picolé">Picolé</option>
-        </datalist>
-        <button type="submit">Enviar</button>
-    </form>
+    <div class="wrapper">
+        <div class="form">
+            <form id="form-add" class="mx-5">
+                <div class="my-5">
+                    <h3>Cadastro de Produtos</h3>
+                </div>
+                <div class="mb-3">
+                    <label for="nome-produto">Nome do Produto</label>
+                    <input type="text" id="nome-produto" name="nome_produto" class="form-control" placeholder="Nome do Produto">
+                </div>
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <label for="preco-venda">Preço de Venda</label>
+                        <input type="text" id="preco-venda" name="preco_venda" class="form-control" placeholder="Preço de Venda">
+                    </div>
+                    <div class="col-6">
+                        <label for="preco-custo">Preço de Custo</label>
+                        <input type="text" id="preco-custo" name="preco_custo" class="form-control" placeholder="Preço de Custo">
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-6">
+                        <label for="marca">Marca</label>
+                        <input type="text" id="marca" name="marca" class="form-control" placeholder="Marca">
+                    </div>
+                    <div class="col-6">
+                        <label for="Estoque">Estoque</label>
+                        <input type="text" id="estoque" name="estoque" class="form-control" placeholder="Estoque">
+                    </div>
+                </div>
+                <div class="my-3">
+                    <label for="descricao">Descrição do Produto</label>
+                    <textarea name="descricao" id="descricao" class="form-control" rows="10"></textarea>
+                </div>
+                <button onclick="addProduct()" type="button" id="btn-add" class="w-100 btn btn-success">
+                    Cadastrar
+                </button>
+            </form>
+        </div>
+        <div class="list">
+            <div class="container">
+                <table id="list-products" class="table">
+                    <thead>
+                        <tr>
+                            <th>Nome do Produto</th>
+                            <th>Preço de Venda</th>
+                            <th>Preço de Custo</th>
+                            <th>Marca</th>
+                            <th>Estoque</th>
+                            <th>Descrição</th>
+                        </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.bundle.min.js" integrity="sha512-sH8JPhKJUeA9PWk3eOcOl8U+lfZTgtBXD41q6cO/slwxGHCxKcW45K4oPCUhHG7NMB4mbKEddVmPuTXtpbCbFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
